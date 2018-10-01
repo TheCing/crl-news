@@ -1,0 +1,8 @@
+@import "imports/reset";
+@import "imports/bourbon/bourbon";
+
+body{
+  font-family: $font-stack-lucida-grande;
+  font-size: 1em;
+  text-align: center;
+}
