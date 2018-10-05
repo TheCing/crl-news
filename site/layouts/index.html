@@ -1,9 +1,44 @@
 {{ partial "header" . }}
 
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
+<div class="main">
+  <div class="hero">
+    <h1 class="hero-title">Clash Royale League</h1>
+    <p>latest article published October 5th, 2018</p>
+  </div>
+  <div class="container">
+    <hr>
+  </div>
+  <div class="latest-score">
+    <p>latest match score</p>
+    <div class="score-block">
+      <div class="home-team">
+        <img src="/images/teams/na/complexity.png" alt="Complexity">
+      </div>
+      <div class="match-score">
+        3 - 1
+      </div>
+      <div class="away-team">
+        <img src="/images/teams/na/nrg.png" alt="NRG">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <hr>
+  </div>
+  <div class="example-article">
+    <div class="container">
+      <h1 class="article-title">North American Primer</h1>
+      <p class="article-subtitle">posted October 5th, 2018</p>
+      <div class="article-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est... Read more ></p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <hr>
+  </div>
+</div>
 
-<p>
-  Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!
-</p>
+<!-- {{ .Content }} -->
 
 {{ partial "footer" . }}

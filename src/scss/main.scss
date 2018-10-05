@@ -1,8 +1,141 @@
 @import "imports/reset";
 @import "imports/bourbon/bourbon";
+@import "imports/neat/neat";
+@import "imports/base/base";
+@import "imports/fontawesome/fontawesome";
+@import "imports/fontawesome/brands";
+@import "imports/fontawesome/regular";
+@import "imports/fontawesome/solid";
+@import "variables";
+@import "fonts";
 
 body{
-  font-family: $font-stack-lucida-grande;
+  font-family: $font-stack-garamond;
   font-size: 1em;
   text-align: center;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+nav {
+  padding: 0.15em 0 0.3em 0;
+  background-color: white;
+  box-shadow: 2px 2px 8px;
+  @include grid-container;
+  ul {
+    @include grid-column(12);
+    li {
+      display: inline;
+      visibility: hidden;
+      @include grid-column(1);
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: shade(white, 25%);
+        }
+      }
+    }
+  }
+  .hamburger {
+    position: absolute;
+    margin-top: 0.65em;
+    margin-left: 1.5em;
+    .bars {
+      @extend %fa-icon;
+      @extend .fas;
+
+      &:before {
+        content: fa-content($fa-var-bars);
+      }
+    }
+  }
+  .home {
+    position: absolute;
+    z-index: 10;
+    @include grid-column(12);
+    .home-link {
+      .home-logo {
+        width: 3em;
+      }
+    }
+  }
+  .account {
+    position: absolute;
+    margin-top: 0.65em;
+    right: 1.5em;
+    .user {
+      @extend %fa-icon;
+      @extend .fas;
+
+      &:before {
+        content: fa-content($fa-var-user);
+      }
+    }
+  }
+}
+
+.main {
+  .hero {
+    padding-top: 1em;
+    .hero-title {
+      font-family: $playfair;
+      font-weight: 900;
+      font-size: 2em;
+      margin-bottom: 0.25em;
+    }
+  }
+  .latest-score {
+    // background: url(/images/cr_blur.png) center center;
+    p {
+      margin: 0;
+      font-family: $roboto;
+      font-variant: small-caps;
+    }
+    .score-block {
+      @include grid-container;
+      .home-team {
+        display: inline;
+        @include grid-column(4);
+        img {
+          width: 4em;
+        }
+      }
+      .match-score {
+        @include grid-column(4);
+        display: inline;
+        font-family: $roboto;
+        padding-top: 0.5em;
+      }
+      .away-team {
+        display: inline;
+        @include grid-column(4);
+        img {
+          width: 4em;
+        }
+      }
+    }
+  }
+  .example-article {
+    margin-top: 1em;
+    .article-title {
+      font-family: $playfair;
+      font-weight: 900;
+      font-size: 1.5em;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .article-subtitle {
+      text-align: left;
+    }
+    .article-content {
+      text-align: left;
+      font-family: $roboto;
+    }
+  }
 }

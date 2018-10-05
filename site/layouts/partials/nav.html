@@ -1,4 +1,15 @@
 <nav>
+  <div class="hamburger">
+    <span class="bars"></span>
+  </div>
+  <div class="home">
+    <a class="home-link" href="/">
+      <img class="home-logo" src="/images/crl_logo.png" alt="Home">
+    </a>
+  </div>
+  <div class="account">
+    <span class="user"></span>
+  </div>
   <ul>
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}

@@ -2,10 +2,34 @@ baseurl = "/"
 contentDir = "content"
 languageCode = "en-us"
 languageLang = "en"
-title = "My new Victor-Hugo site"
+title = "CRL Primer"
 permalinks = "/:title/"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[menu]
+
+  # [[menu.main]]
+  #   identifier = "home"
+  #   name = "Home"
+  #   url = "/"
+  #   weight = 1
+  [[menu.main]]
+    identifier = "standings"
+    name = "Standings"
+    url = "/standings/"
+    weight = 2
+  [[menu.main]]
+    parent = "standings"
+    name = "NA"
+    url = "/standings/NA/"
+  [[menu.main]]
+    identifier = "articles"
+    name = "Articles"
+    pre = "<span class='articles'>"
+    post = "</span>"
+    url = "/articles/"
+    weight = 3
