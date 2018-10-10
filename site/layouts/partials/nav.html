@@ -1,6 +1,6 @@
 <nav>
-  <div class="hamburger">
-    <span class="bars"></span>
+  <div class="hamburger" id="hamburger">
+    <span class="bars" id="bars"></span>
   </div>
   <div class="home">
     <a class="home-link" href="/">
@@ -10,30 +10,32 @@
   <div class="account">
     <span class="user"></span>
   </div>
-  <ul>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-      {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-          <a href="#">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-          <ul class="sub-menu">
-            {{ range .Children }}
-              <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                <a href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
-          </ul>
-        </li>
-      {{ else }}
-        <li>
-          <a href="{{.URL}}">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-        </li>
+  <div class="sidenav" id="sidenav">
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+          <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+            <a href="#">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+            <ul class="sub-menu">
+              {{ range .Children }}
+                <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                  <a href="{{ .URL }}">{{ .Name }}</a>
+              {{ end }}
+            </ul>
+          </li>
+        {{ else }}
+          <li>
+            <a href="{{.URL}}">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </ul>
+    </ul>
+  </div>
 </nav>
