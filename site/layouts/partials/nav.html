@@ -1,7 +1,7 @@
 <nav>
-  <div class="hamburger" id="hamburger">
+  <!-- <div class="hamburger" id="hamburger">
     <span class="bars" id="bars"></span>
-  </div>
+  </div> -->
   <div class="home">
     <a class="home-link" href="/">
       <img class="home-logo" src="/images/crl_logo.png" alt="Home">
@@ -11,6 +11,7 @@
     <span class="user"></span>
   </div>
   <div class="sidenav" id="sidenav">
+    <img class="home-logo" src="/images/crl_logo.png" alt="Home">
     <ul>
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}

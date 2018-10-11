@@ -9,6 +9,9 @@ console.log("🦊 Hello! Edit me in src/js/app.js");
 
 $(function(){
   console.log("jquery is ready!");
+  $(".standings-link").click(function(){
+    $(".sub-menu").fadeToggle();
+  });
 });
 
 $("body").on('click', '#bars', function() {
@@ -31,6 +34,7 @@ function openNav() {
       backgroundColor: 'rgba(0,0,0,0.6)'
     }, { duration: 200, queue: false });
     window.addEventListener('scroll', noscroll);
+    $("#sidenav").fadeIn(1000);
 }
 
 function closeNav() {
@@ -44,6 +48,7 @@ function closeNav() {
     backgroundColor: 'rgba(0,0,0,0)'
   }, { duration: 400, queue: false });
   window.removeEventListener('scroll', noscroll);
+  $("#sidenav").fadeOut(1000);
 }
 
 function noscroll() {

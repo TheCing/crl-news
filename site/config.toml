@@ -20,6 +20,8 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "standings"
     name = "Standings"
+    pre = "<span class='standings-link'>"
+    post = "</span>"
     url = "/standings/"
     weight = 2
   [[menu.main]]
@@ -29,7 +31,12 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "articles"
     name = "Articles"
-    pre = "<span class='articles'>"
+    pre = "<span class='articles-link'>"
     post = "</span>"
     url = "/articles/"
     weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 4

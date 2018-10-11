@@ -81,6 +81,7 @@ nav {
     }
   }
   .sidenav {
+    display: none;
     height: 100%;
     width: 0;
     position: fixed;
@@ -89,8 +90,11 @@ nav {
     left: 0;
     background-color: white;
     overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    // transition: 0.5s;
+    padding-top: 16px; // 60px
+    img {
+      width: 3em;
+    }
     a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
@@ -100,6 +104,17 @@ nav {
       transition: 0.3s;
       &:hover {
         color: #f1f1f1;
+      }
+      .standings-link {
+        @extend %fa-icon;
+        @extend .fas;
+
+        &:after {
+          content: fa-content($fa-var-caret-down);
+        }
+        span {
+          font-weight: normal;
+        }
       }
     }
     .sub-menu {
@@ -180,5 +195,15 @@ nav {
       text-align: left;
       font-family: $roboto;
     }
+  }
+}
+
+.list-main {
+  .title {
+    padding-top: 2em;
+    font-family: $playfair;
+    font-weight: 900;
+    font-size: 2em;
+    margin-bottom: 0.25em;
   }
 }

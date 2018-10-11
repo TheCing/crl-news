@@ -1,7 +1,9 @@
 {{ partial "header" . }}
 
-<h1>This is the List layout</h1>
-<h2>{{ .Title }}</h2>
-{{ .Content }}
+<div class="list-main">
+  <h1 class="title">{{ .Title }}</h1>
+  {{ .PublishDate }}
+  {{ .Content }}
+</div>
 
 {{ partial "footer" . }}
