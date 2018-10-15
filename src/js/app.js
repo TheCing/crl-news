@@ -4,9 +4,6 @@ import Color from 'jquery-color';
 window.jQuery = $;
 window.$ = $;
 
-// Say hello
-console.log("🦊 Hello! Edit me in src/js/app.js");
-
 $(function(){
   console.log("jquery is ready!");
   $(".standings-link").click(function(){
