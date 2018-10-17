@@ -20,7 +20,7 @@ export default {
 
   plugins: [
     new webpack.ProvidePlugin({
-      "fetch": "imports-loader?this=>global!exports?global.fetch!whatwg-fetch"
+      "fetch": "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
     })
   ],
 
@@ -32,6 +32,15 @@ export default {
     path: path.join(__dirname, "dist"),
     publicPath: "/",
     filename: "[name].js"
+  },
+  context: path.join(__dirname, "site"),
+  entry: {
+    bundle: ["./static/admin/index"]
+  },
+  output: {
+    path: path.join(__dirname, "dist/admin"),
+    publicPath: "/admin",
+    filename: "bundle.js"
   },
   externals:  [/^vendor\/.+\.js$/]
 };
